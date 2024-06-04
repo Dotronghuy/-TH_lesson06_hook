@@ -1,6 +1,10 @@
 import React from "react";
 
-export default function ĐthListTask({ renderĐthListTasks }) {
+export default function ĐthListTask({ renderĐthListTasks, onDTHEdit }) {
+  const dthHandleEdit = (param) => {
+    onDTHEdit(dthHandleEdit);
+  };
+
   console.log(renderĐthListTasks);
 
   //render data

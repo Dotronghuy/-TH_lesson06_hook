@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React, { useState } from "react";
 import ĐthListTask from "./components/ĐthListTask";
@@ -7,7 +6,11 @@ import ĐthTaskAddOrEdit from "./components/ĐthTaskAddOrEdit";
 function App() {
   //mock data
   const đth_listTasks = [
-    { đth_taskId: 2210900106, đth_taskName: "Lê Vinh Huy", đth_level: "Small" },
+    {
+      đth_taskId: 2210900106,
+      đth_taskName: "Đỗ Trọng Huy",
+      đth_level: "Small",
+    },
     {
       đth_taskId: 1,
       đth_taskName: "Học lập trình frontend",
@@ -40,11 +43,14 @@ function App() {
   };
   return (
     <div className="container border">
-      <h1>Lê Vinh Huy - K22CNT1</h1>
+      <h1>Đỗ Trọng Huy - K22CNT1</h1>
       <hr />
       <div>
         {/*Danh sách list task */}
-        <ĐthListTask renderđthListTasks={đthlistTasks} />
+        <ĐthListTask
+          renderđthListTasks={đthlistTasks}
+          onDTHEdit={dthHandleEdit}
+        />
       </div>
       <ĐthTaskAddOrEdit đthOnSubmit={đthHandleSubmit} />
     </div>
