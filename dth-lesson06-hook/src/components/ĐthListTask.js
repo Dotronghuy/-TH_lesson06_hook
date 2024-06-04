@@ -1,11 +1,17 @@
 import React from "react";
 
 export default function ĐthListTask({ renderĐthListTasks, onDTHEdit }) {
-  const dthHandleEdit = (param) => {
-    onDTHEdit(dthHandleEdit);
-  };
+  const [dthList, setdthList] = useState(renderĐthListTasks);
+  useEffect(() => {
+    setdthList(renderĐthListTasks);
+  }, [renderĐthListTasks]);
 
-  console.log(renderĐthListTasks);
+  //Hàm xử lí dữ liệu edit
+  const dthHandleEdit = (param) => {
+    console.log("Edit", param);
+    //chuyển dữ liệu sửa lên app
+    onDTHEdit(param);
+  };
 
   //render data
   let đthElementTask = renderĐthListTasks.map((task, index) => {
